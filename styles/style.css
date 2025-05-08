@@ -30,14 +30,20 @@ body {
 main {
   position: relative;
   top: -10em;
-  width: 100%;
+  width: 93%;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
 }
 section {
   width: 93%;
   position: absolute;
   overflow-x: hidden;
+}
+@media screen and (min-width: 720px) {
+  section {
+    max-width: 900px;
+  }
 }
 header {
   background-image: url(../images/bg-mobile-dark.jpg);
@@ -107,12 +113,10 @@ section div input[type="text"]::placeholder {
 }
 .Todo_output {
   width: 100%;
-  padding: 0em 0em 1em 0em;
   background-color: var(--Very-Dark-Desaturated-Blue);
   border-radius: 0.4em;
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
 }
 .text-render {
   color: var(--Dark-Grayish-Blue);
@@ -148,16 +152,21 @@ section div input[type="text"]::placeholder {
 }
 /* task check to complete */
 .text-render .circle_check {
-  width: 1em;
+  width: 2em;
   height: 2em;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
+  transition: 0.4s ease-in-out;
   background: linear-gradient(45deg, hsl(220, 98%, 61%), hsl(280, 87%, 65%));
 }
 
 .circle:hover img {
+  cursor: pointer;
+}
+.circle:hover {
   cursor: pointer;
 }
 
@@ -173,14 +182,10 @@ section div input[type="text"]::placeholder {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.6em;
   min-height: 4em;
-  border: 1px solid green;
+  padding: 0.8em;
 }
-.count p,
-.clear {
-  margin-top: 0.4em;
-}
+
 .clear {
   display: flex;
   gap: 1em;
@@ -204,4 +209,7 @@ section div input[type="text"]::placeholder {
 }
 .status div:hover {
   color: hsl(220, 98%, 61%);
+}
+.completed {
+  text-decoration: line-through;
 }
